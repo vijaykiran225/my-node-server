@@ -10,6 +10,7 @@
   "author": "vijaykiran225",
   "license": "ISC",
   "dependencies": {
+    "adaro": "^1.0.4",
     "express": "^4.17.1",
     "node-osascript": "^2.1.0",
     "osa2": "^0.2.3",

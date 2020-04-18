@@ -2,6 +2,15 @@ const express = require("express");
 
 const route = express.Router();
 
+
+route.get("/sample", (req, res) => {
+
+    res.render('homepage', {
+        "name": "vijay"
+    })
+})
+
+
 route.get("/", (req, res) => {
 
     var osa = require('osa2')

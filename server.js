@@ -1,8 +1,17 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+var adaro = require('adaro');
 
 const insRouter = require("./routes/instruction.js");
+
+var options = {
+    helpers: ['dustjs-helpers']
+};
+
+app.engine('dust', adaro.dust(options));
+app.set('view engine', 'dust');
+app.set('views', path.resolve(__dirname, 'templates'));
 
 app.use(function (req, res, next) {
     console.log('Request URL:', req.originalUrl)
