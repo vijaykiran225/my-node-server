@@ -3,20 +3,18 @@ const express = require("express");
 const route = express.Router();
 
 
-route.get("/sample", (req, res) => {
+route.get("/health", (req, res) => {
 
     res.render('homepage', {
-        "name": "vijay"
+        "name": "system is up"
     })
 })
 
-
-route.get("/", (req, res) => {
+route.get("/vlc/", (req, res) => {
 
     var osa = require('osa2')
 
     var track = osa(() => {
-        // return Application('VLC').currentTrack.name()
         var f = Application('VLC');
         // f.includeStandardAdditions = true;
         // f.activate();

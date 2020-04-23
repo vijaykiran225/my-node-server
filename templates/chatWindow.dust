@@ -1,0 +1,33 @@
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    var socket = io("http://localhost:3000");
+
+    function init(roomName) {
+
+        socket.emit('new', "vijay", roomName);
+
+        socket.on('out', function (msg) {
+            $('#dataFlow').text(msg);
+            console.log("got data", msg);
+        });
+    }
+
+
+    function sendIO(roomName) {
+        let move = document.getElementById("moveName").value;
+        socket.emit('in', move, roomName);
+    }
+
+</script>
+
+<body onload='init("{roomName}")'>
+
+    <input type="text" id="moveName">
+    <input type="button" value="Submit Move" onclick='sendIO("{roomName}")'>
+
+    <div id="dataFlow"></div>
+
+
+</body>

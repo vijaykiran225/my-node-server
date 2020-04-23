@@ -4,8 +4,7 @@
   "description": "server to do stuff",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "vijaykiran225",
   "license": "ISC",
@@ -14,6 +13,6 @@
     "express": "^4.17.1",
     "node-osascript": "^2.1.0",
     "osa2": "^0.2.3",
-    "serve-static": "^1.14.1"
+    "socket.io": "^2.3.0"
   }
 }
